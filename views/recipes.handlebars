@@ -1,0 +1,19 @@
+{{> navbar}}
+<div class="row" style="display:flex; flex-wrap:wrap">
+{{#each recipe}}
+<div class="col s6 m3">
+ <div class="card">
+        <div class="card-image">
+          <img src={{image}} class="cardImage">
+          <span class="card-title">{{name}}</span>
+          <a href="/recipe/{{_id}}"class="btn-floating halfway-fab waves-effect waves-light red">More Info</a>
+        </div>
+        <div class="card-content">
+          <p>{{url}}</p>
+        </div>
+      </div>
+  </div>
+  {{/each}}
+  </div>
+
+{{> footer}}

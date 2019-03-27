@@ -1,0 +1,56 @@
+nav {
+  height: 90px;
+  line-height: 90px
+}
+
+#indexTitle {
+  color: #0ac
+}
+
+.modal {
+  max-height: 100%;
+  overflow: hidden;
+  width: 30%
+}
+
+input[type="submit"] {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+#recipeInput {
+  width: 100%
+}
+
+.recLink {
+  font-family: Arial, Helvetica, sans-serifl;
+  display: block;
+  font-weight: bold;
+  display: block;
+  font-size: 30px;
+  text-decoration: underline;
+  padding-bottom: 20px;
+}
+
+.picLink {
+  height: 500px;
+  width: 650px
+}
+
+.sysform {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto
+}
+
+.cardImage {
+  height: 300px;
+}

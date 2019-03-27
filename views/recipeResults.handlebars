@@ -1,0 +1,45 @@
+{{> navbar}}
+
+
+<div class="container">
+  <header class="jumbotron">
+    <div class=container></div>
+    <h1>{{currentUser.username}}</h1>
+    <h1>Press save to add the recipes to your dashboard</h1>
+    <p>
+      <a class="btn btn-primary btn-large" href="/{{currentUser.username}}/recipes/dashboard">Go To Your Dashboard</a>
+    </p>
+  </header>
+
+  <div class="row text-center" style="display:flex; flex-wrap:wrap">
+    {{#each data}}
+    <div class="col-md-3 col-sm-6">
+      <div class="thumbnail">
+        <img src="{{recipe.image}}" alt="Recipe Pic">
+        <div class="caption">
+          <h4>
+            {{recipe.label}}
+          </h4>
+         
+        </div>
+        <p>
+         <form id="buttonDesign" action="/recipes/dashboard" method="POST">
+         <input type="hidden" name="recName" value="{{this.recipe.label}}"/>
+         <input type="hidden" name="recImage" value="{{this.recipe.image}}"/>
+         <input type="hidden" name="recUrl" value="{{this.recipe.url}}"/>
+            <button class="btn btn-primary">Save</button>
+          </form>
+        </p>
+      </div>
+    </div>
+   {{/each}}
+  </div>
+
+</div>
+
+</div>
+
+
+{{!-- <script src="/assets/js/recipeSearch.js"></script> --}}
+
+{{> footer}}

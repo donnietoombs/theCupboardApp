@@ -1,0 +1,98 @@
+<nav class="black">
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo">
+      The Cupboard
+    </a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+      <i class="material-icons">
+        menu
+      </i>
+    </a>
+    <ul class="right hide-on-med-and-down">
+      {{#if currentUser}}
+        <li>
+          <a href="">
+            <strong>
+              Signed in As
+              {{currentUser.username}}
+            </strong>
+          </a>
+        </li>
+        <li>
+          <a href="/{{currentUser.username}}/recipes/dashboard">
+            View Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="/recipes/new">
+            Add Recipe
+          </a>
+        </li>
+        <li>
+          <a href="/recipes">
+            View Recipes
+          </a>
+        </li>
+         <li>
+          <a href="/api/recipes/new">
+            Search Recipes
+          </a>
+        </li>
+        <li>
+          <a href="/logout">
+            LogOut
+          </a>
+        </li>
+      {{else}}
+      
+        <li>
+          <a href="/recipes/new">
+            Add Recipe
+          </a>
+        </li>
+        <li>
+          <a href="/api/recipes/new">
+            Search Recipes
+          </a>
+        </li>
+        <li>
+          <a href="/recipes">
+            View Recipes
+          </a>
+        </li>
+        <li>
+          <a href="/login">
+            Login
+          </a>
+        </li>
+        <li>
+          <a href="/register">
+            Register
+          </a>
+        </li>
+      {{/if}}
+    </ul>
+  </div>
+</nav>
+<ul class="sidenav" id="mobile-demo">
+  {{!-- {{#if (currentUser)}} --}}
+  {{!-- <li><a href=""><strong>Signed in As
+        {{currentUser.username}}</strong></a></li> --}}
+  <li>
+    <a href="/logout">
+      Register
+    </a>
+  </li>
+  {{!-- {{else}} --}}
+  <li>
+    <a href="/login">
+      Login
+    </a>
+  </li>
+  <li>
+    <a href="/register">
+      Register
+    </a>
+  </li>
+  {{!-- {{/if}} --}}
+</ul>

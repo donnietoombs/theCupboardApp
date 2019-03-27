@@ -1,0 +1,33 @@
+{{> navbar}}
+
+<div class="container">
+  <header class="jumbotron">
+    <div class=container></div>
+    <h2>Hello {{currentUser.username}}</h2>
+    <h4>Welcome to your recipe dashboard </h4>
+    <p>
+      <a class="btn btn-primary btn-small" href="/{{currentUser.username}}/recipes/dashboard">Search For Recipes</a>
+    </p>
+  </header>
+
+ <div class="row text-center" style="display:flex; flex-wrap:wrap">
+    {{#each recipe}}
+    <div class="col-md-3 col-sm-6">
+      <div class="thumbnail">
+        <img src="{{image}}" alt="Recipe Pic">
+        <div class="caption">
+          <h4>
+            {{name}}
+          </h4>
+          
+        </div>
+      </div>
+    </div>
+   {{/each}}
+  </div>
+
+</div>
+
+</div>
+
+{{> footer}}
