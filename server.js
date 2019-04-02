@@ -22,7 +22,12 @@ app.use(express.static(__dirname + '/public'));
 // Set Handlebars.
 var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({
-  defaultLayout: "main"
+  helpers: {
+    json: function (value, options) {
+      return JSON.stringify(value);
+    }
+  },
+  defaultLayout: "main",
 }));
 app.set("view engine", "handlebars");
 

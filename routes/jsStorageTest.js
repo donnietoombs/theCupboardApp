@@ -127,3 +127,18 @@ instead of the api response
 show when inspecting buttons in dev tool where all other versions ex. /recipe/dashboard/{{recipe.label}} & 
 /recipe/dashboard/user work. currentUser.username is printed on the page in the same template. 
 */
+
+
+/* // // test route
+// router.post("/test", function (req, res) {
+//   console.log(req.body.recName);
+//   console.log(req.body.recImage);
+//   console.log(req.body.recUrl);
+//   console.log(req.body.recIngredients);
+//   console.log(req.body.author);
+//   console.log(req.body.title);
+// })
+
+// router.get("/test", function (req, res) {
+//   res.render("test");
+// }) */

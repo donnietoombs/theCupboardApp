@@ -4,6 +4,7 @@ var RecipeSchema = new mongoose.Schema({
   name: String,
   image: String,
   url: String,
+  ingredients: [String],
   user: {
     id: {
       type: mongoose.Schema.Types.ObjectId,

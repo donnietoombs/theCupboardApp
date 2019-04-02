@@ -1,0 +1,20 @@
+<form id="buttonDesign" action="/test" method="POST">
+         <input type="hidden" name="recName" value="My" id="recName"/>
+         <input type="hidden" name="recImage" value="Name"/>
+         <input type="hidden" name="recUrl" value="is"/>
+         <input type="hidden" name="recIngredients" value="Donnie"/>
+            <button class="btn btn-primary" id="postData">Save</button>
+          </form>
+
+   {{!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script>
+   $('#postData').click(function(e) {
+       e.preventDefault();
+       $.post("/test", 
+       {author:"Jackson",
+        title: "Addy"})
+     // On success, run the following code
+     .then(function() {
+    }); 
+    });
+</script> --}}

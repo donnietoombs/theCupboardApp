@@ -1,6 +1,10 @@
+
 {{> navbar}}
 
-<div class="container">
+
+<div class="container-fluid">
+  <div class="row">
+   <div class="col-md-6">
   <header class="jumbotron">
     <div class=container></div>
     <h2>Hello {{currentUser.username}}</h2>
@@ -10,7 +14,7 @@
     </p>
   </header>
 
- <div class="row text-center" style="display:flex; flex-wrap:wrap">
+    <div class="row text-center" style="display:flex; flex-wrap:wrap">
     {{#each recipe}}
     <div class="col-md-3 col-sm-6">
       <div class="thumbnail">
@@ -19,7 +23,15 @@
           <h4>
             {{name}}
           </h4>
-          
+          <h5>
+            Ingredients
+          </h5>
+          {{!-- recipe.ingredients is an array of ingredient objects with text as a key --}}
+          {{#each ingredients}}
+          <ul>
+            <li class="ingList" style="background-color:aquamarine">{{this}}</li>
+          </ul>
+          {{/each}}
         </div>
       </div>
     </div>
@@ -28,6 +40,52 @@
 
 </div>
 
+<div class="col-md-6">
+<div class="row" id="gotItRow">
+<header class="jumbotron">
+    <div class=container></div>
+    <h2>Hello {{currentUser.username}}</h2>
+    <h4>Welcome to Your Pantry </h4>
+    
+  {{#each ingredient}}
+    {{#if inStock }}
+    <ul>
+     <li class="ingList" style="background-color:aquamarine">{{name}}</li>
+    </ul>
+    {{/if}}
+  {{/each}}
+    <p>
+      <a class="btn btn-primary btn-small" href="/{{currentUser.username}}/recipes/dashboard">Search For Recipes</a>
+    </p>
+  </header>
+  <div class="row text-center" style="display:flex; flex-wrap:wrap">
+  
+    <div class="col-md-3 col-sm-6">
+  </div>
+  </div>
+</div>
+
+<div class="row" id="needItRow">
+<header class="jumbotron">
+    <div class=container></div>
+    <h2>Hello {{currentUser.username}}</h2>
+    <h4>Heres Your Shopping List</h4>
+    <p>
+      <a class="btn btn-primary btn-small" href="/{{currentUser.username}}/recipes/dashboard">Search For Recipes</a>
+    </p>
+  </header>
+  <div class="row text-center" style="display:flex; flex-wrap:wrap">
+  
+    <div class="col-md-3 col-sm-6">
+  </div>
+  </div>
+</div>
+
+</div>
+
 </div>
 
 {{> footer}}
+
+
+

@@ -1,7 +1,15 @@
 var mongoose = require("mongoose");
 
 var IngredientSchema = mongoose.Schema({
-  ingredients: [string]
+  name: String,
+  inStock: Boolean,
+  user: {
+    id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User"
+    },
+    username: String
+  },
 });
-var Ingredient = mongoose.model("Ingredient", commentSchema);
+var Ingredient = mongoose.model("Ingredient", IngredientSchema);
 module.exports = Ingredient;

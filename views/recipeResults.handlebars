@@ -1,6 +1,5 @@
 {{> navbar}}
 
-
 <div class="container">
   <header class="jumbotron">
     <div class=container></div>
@@ -20,13 +19,22 @@
           <h4>
             {{recipe.label}}
           </h4>
-         
+          <h5>
+            Ingredients
+          </h5>
+          {{!-- recipe.ingredients is an array of ingredient objects with text as a key --}}
+          {{#each recipe.ingredients}}
+          <ul>
+            <li class="ingList" style="background-color:aquamarine">{{text}}</li>
+          </ul>
+          {{/each}}
         </div>
         <p>
          <form id="buttonDesign" action="/recipes/dashboard" method="POST">
          <input type="hidden" name="recName" value="{{this.recipe.label}}"/>
          <input type="hidden" name="recImage" value="{{this.recipe.image}}"/>
          <input type="hidden" name="recUrl" value="{{this.recipe.url}}"/>
+         <input type="hidden" name="recIngredients" value="{{json this.recipe.ingredients}}"/>
             <button class="btn btn-primary">Save</button>
           </form>
         </p>

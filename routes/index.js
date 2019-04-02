@@ -44,12 +44,9 @@ router.get('/login', function (req, res) {
 // Login Logic Post to Server
 router.post(
   '/login',
-  passport.authenticate('local', {
-    successRedirect: '/recipes',
-    failureRedirect: '/login'
-  }),
+  passport.authenticate('local'),
   function (req, res) {
-    res.redirect('/');
+    res.redirect("/" + req.user.username + '/recipes/dashboard');
   }
 );
 
