@@ -47,14 +47,24 @@
     <h2>Hello {{currentUser.username}}</h2>
     <h4>Welcome to Your Pantry </h4>
     
-  {{#each ingredient}}
-    {{#if inStock }}
-    <ul>
-     <li class="ingList" style="background-color:aquamarine">{{name}}</li>
-    </ul>
-    {{/if}}
-  {{/each}}
-    <p>
+  
+    
+      
+        {{#each ingredient}}
+        {{#if inStock }}
+        <div class="col-md-3 col-sm-6"></div>
+        <ul>
+       <li class="ingList" style="background-color:aquamarine; max-width: 50%"><h5>{{name}}</h5>
+       <form id="buttonDesign" action="/ingredients/{{this._id}}?_method=DELETE" method="POST">
+            <button class="btn btn-danger">Delete</button>
+          </form>
+     </li>
+     </ul>
+     {{/if}}
+    {{/each}}
+  
+    
+      <p>
       <a class="btn btn-primary btn-small" href="/{{currentUser.username}}/recipes/dashboard">Search For Recipes</a>
     </p>
   </header>
